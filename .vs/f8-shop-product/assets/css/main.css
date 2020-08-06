@@ -14,6 +14,7 @@
     list-style: none;
     display: inline-block;
     padding-left: 0px;
+    margin-top: 14px;
 }
 
 .header__navbar-item {
@@ -30,6 +31,13 @@
     text-decoration: none;
 }
 
+.header__navbar-item:hover, 
+.header__navbar-item-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+
+}
+
 .header__navbar-item--strong { 
     font-weight: 500;
 }
@@ -44,4 +52,9 @@
     top: 50%;
     right: -10px;
     transform: translateY(-50%);
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
 }
