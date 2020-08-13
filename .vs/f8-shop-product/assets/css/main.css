@@ -257,3 +257,70 @@
     font-weight: 400;
     font-size: 1.7rem;
 }
+
+
+/* Authen Modal */
+.authen-form {
+    width: 500px;
+}
+
+.authen-form__container {
+    padding: 0 42px;
+}
+
+.authen-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.authen-form__heading {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.authen-form__header-btn {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.authen-form__form {
+}
+
+.authen-form__input {
+    width: 100%;
+    height: 43px;
+    margin-top: 16px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+.authen-form__input:focus {
+    border-color: #777;
+}
+
+.authen-form__aside {
+    margin-top: 18px;
+}
+
+.authen-form__policy-text {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.authen-form__text-link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.authen-form__controls {
+    margin-top: 90px;
+}
