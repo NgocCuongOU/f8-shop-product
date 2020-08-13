@@ -27,6 +27,9 @@
     display: block;
 }
 
+.header__navbar-item--has-notify:hover .header__notify {
+    display: block;
+}
 .header__navbar-item, 
 .header__navbar-item-link {
     display: inline-block;
@@ -134,7 +137,48 @@
     width: 500px;
     background-color: var(--white-color);
     border: 1px solid #D3D3D3;
+    cursor: default;
+    transform-origin: calc(100% - 20px) top;
+    animation: headerNotifyGrowth ease-in 0.25s;
+    /* Hộ trợ cho trình duyệt chạy mượt mà hơn với will-change */
+    will-change: opacity, transform;
+    display: none;
 }
+
+.header__notify::before {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 20px 27px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    top: -32px;
+    right: 9px;
+}
+
+.header__notify::after {
+    content: "";
+    display: block;
+    width: 104px;
+    height: 22px;
+    position: absolute;
+    right: -8px;
+    top: -16px;
+}
+
+
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
 
 .header__notify-header {
     height: 50px;
@@ -147,6 +191,7 @@
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 50px;
+    user-select: none;
 }
 
 .header__notify-list {
@@ -186,15 +231,17 @@
 .header__notify-name {
     display: block;
     font-size: 1.6rem;
-    color: var(--black-color);
+    color: var(--text-color);
     font-weight: 400;
+    line-height: 1.9rem;
 }
 
 .header__notify-desciption {
     display: block;
     font-size: 1.4rem;
     color: #756F6E;
-    line-height: 1.6rem;
+    line-height: 1.7rem;
+    margin-top: 4px;
 }
 
 .header__notify-footer {
@@ -205,4 +252,8 @@
 .header__notify-footer-btn {
     text-decoration: none;
     color: var(--text-color);
+    padding: 10px 0px;
+    display: block;
+    font-weight: 400;
+    font-size: 1.7rem;
 }
