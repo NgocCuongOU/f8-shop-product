@@ -1,5 +1,5 @@
 .header {
-    height: 120px;
+    height: var(--header-with-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d);
     margin-top: -10px;
 }
@@ -14,13 +14,13 @@
     list-style: none;
     display: inline-block;
     padding-left: 0px;
-    margin-top: 14px;
+    margin: 14px 0 0 0;
 }
 
 .header__navbar-item {
     margin: 0 8px;
     position: relative;
-    min-height: 26px;
+    min-height: 34px;
 }
 
 .header__navbar-item--has-qr:hover .header__qr {
@@ -386,4 +386,38 @@
 
 .authen-form--help-forgot {
     color: var(--primary-color);
+}
+
+/* Header With Search */
+.header-with-search {
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    width: 200px;
+}
+
+.header__logo-img {
+    width: 150px;
+    color: var(--white-color);
+}
+
+.header__search {
+    height: 40px;
+    background-color: var(--white-color);
+    flex: 1;
+    border-radius: 2px;
+}
+
+.header__cart {
+    width: 188px;
+    text-align: center;
+}
+
+.header__cart-icon {
+    font-size: 2.4rem;
+    color: var(--white-color);
+    margin-top: 10px;
 }
