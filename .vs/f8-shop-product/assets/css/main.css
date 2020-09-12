@@ -12,7 +12,7 @@
 
 .header__navbar-list {
     list-style: none;
-    display: inline-block;
+    display: flex;
     padding-left: 0px;
     margin: 14px 0 0 0;
 }
@@ -21,6 +21,87 @@
     margin: 0 8px;
     position: relative;
     min-height: 34px;
+}
+
+.header__navbar-user {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__navbar-user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.header__navbar-item-name {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.header__navbar-user:hover .header__navbar-user-list {
+    display: block;
+}
+
+.header__navbar-user-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    padding-left: 0;
+    right: 0;
+    width: 189px;
+    list-style: none;
+    border-radius: 2px;
+    box-shadow: 3px 3px 17px rgba(0, 0, 0, 0.2);
+    background-color: var(--white-color);
+    display: none;
+}
+
+.header__navbar-user-list::before {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 20px 25px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    top: -32px;
+    right: 9px;
+}
+
+.header__navbar-user-list::after {
+    content: "";
+    display: block;
+    width: 85%;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% - 2px);
+}
+
+.header__navbar-user-item {
+    font-size: 1.6rem;
+    font-weight: 400;
+    
+}
+
+.header__navbar-user-item--separate {
+    border-top: 1px solid rgba(255, 0, 0, 0.1);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.header__navbar-user-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 6px 32px;
+}
+
+.header__navbar-user-item a:hover {
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .header__navbar-item--has-qr:hover .header__qr {
@@ -34,7 +115,7 @@
 .header__navbar-item-link {
     display: inline-block;
     color: var(--white-color);  
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 300;
     text-decoration: none;
 }
@@ -74,6 +155,10 @@
 .header__navbar-icon-link {
     color: var(--white-color);
     text-decoration: none;
+}
+
+.header__navbar-icon-link:nth-child(2) {
+    margin-left: 3px;
 }
 
 .header__navbar-icon {
@@ -138,8 +223,10 @@
     width: 500px;
     background-color: var(--white-color);
     border: 1px solid #D3D3D3;
+    border-radius: 2px;
     cursor: default;
-    transform-origin: calc(100% - 20px) top;
+    /* transform-origin:  thay đổi vị trí ban đổi khi chuyển động; */
+    transform-origin: calc(100% - 34px) top; 
     animation: headerNotifyGrowth ease-in 0.25s;
     /* Hộ trợ cho trình duyệt chạy mượt mà hơn với will-change */
     will-change: opacity, transform;
@@ -399,6 +486,11 @@
 .header__logo {
     width: 200px;
     padding-left: 8px;
+}
+
+.header__logo-link {
+    text-decoration: none;
+    color: transparent;
 }
 
 .header__logo-img {
@@ -665,7 +757,7 @@
 
 .header__search-option {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     right: 0;
     background-color: var(--white-color);
     border-radius: 2px;
@@ -762,4 +854,71 @@
     color: var(--text-color);
     line-height: 38px;
     display: block;
+}
+
+
+/* App container */
+.app__container {
+    background-color: #f5f5f5;
+}
+
+.app__content {
+    padding-top: 40px;
+}
+
+.category {
+    border-radius: 2px;
+    background-color: var(--white-color);
+}
+
+.category__heading {
+    margin: 0px;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category__heading-icon {
+    font-size: 1.6rem;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.category-list {
+    padding: 0px 0px 4px 0px;
+    list-style: none;
+    margin-left: 11px;
+}
+
+.category-item--active .category-item__link {
+    color: var(--primary-color);
+}
+
+.category-item--active .category-item__link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    transform: translateY(calc(-50% - 1px));
+    border: 5px solid;
+    border-color: transparent transparent transparent var(--primary-color);
+
+}
+
+.category-item__link {
+    position: relative;
+    right: 0;
+    padding: 8px 18px;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    transition: right linear 0.1s;
+}
+
+.category-item__link:hover {
+    color: var(--primary-color);
+    right: -4px;
 }
