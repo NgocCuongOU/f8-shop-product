@@ -181,6 +181,8 @@
     border-radius: 2px;
     display: none;
     animation: fadeIn ease-in 0.3s;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .header__qr::before {
@@ -231,6 +233,7 @@
     /* Hộ trợ cho trình duyệt chạy mượt mà hơn với will-change */
     will-change: opacity, transform;
     display: none;
+    z-index: 1;
 }
 
 .header__notify::before {
@@ -378,9 +381,6 @@
     font-size: 1.6rem;
     font-weight: 400;
     cursor: pointer;
-}
-
-.authen-form__form {
 }
 
 .authen-form__input {
@@ -601,7 +601,9 @@
 }
 
 .header__cart-list-item {
+    height: 52vh;
     padding: 0;
+    overflow-y: auto;
 }
 
 .header__cart-item {
@@ -635,10 +637,18 @@
 
 .header__cart-item-name {
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     margin: 0;
     color: var(--text-color);
     cursor: pointer;
+    flex: 1;
+    padding-right: 12px;
+    text-align: left;
 }
 
 .header__cart-item-price {
@@ -697,6 +707,7 @@
     display: none;
     animation: fadeIn ease-in 0.2s;
     cursor: default;
+    z-index: 1;
 }
 
 .header__cart-list::after {
@@ -766,6 +777,7 @@
     padding-left: 0px;
     display: none;
     animation: fadeIn ease-in 0.2s;
+    z-index: 1;
 }
 
 .header__search-option::before {
@@ -820,6 +832,7 @@
     left: 0;
     display: none;
     animation: fadeIn ease-in 0.15s;
+    z-index: 2;
 }
 
 .header__search-history-heading {
@@ -1000,14 +1013,17 @@
     margin-bottom: 10px;
 }
 
+.home-products-pagination {
+    margin: 48px 0 32px 0;
+}
+
 .home-product-item {
     display: block;
     text-decoration: none;
     position: relative;
     margin-top: 10px;
     background-color: var(--white-color);
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-radius: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     transition: transform ease-in 0.1s;
     will-change: transform;
@@ -1022,7 +1038,9 @@
     padding-top: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: top center;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .home-product-item__name {
@@ -1160,6 +1178,7 @@ i.home-product-item__like-icon-fill {
     width: 50px;
     height: 40px;
     text-align: center;
+    border-top-right-radius: 2px;
     background-color: rgba(236, 226, 24, 0.945);
 }
 
