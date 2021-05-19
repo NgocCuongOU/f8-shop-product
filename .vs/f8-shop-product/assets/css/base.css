@@ -6,6 +6,7 @@
     --border-color: #dbdbdb;
     --star-gold-color: #FFCE3E;
     --header-with-height: 160px;
+    --header-sort-bar-height: 46px;
     --navbar-with-height: 52px;
     --header-with-search-height: calc(var(--header-with-height) - var(--navbar-with-height));
 }
@@ -20,16 +21,6 @@ html {
     line-height: 1.6rem;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
-
-.grid {
-    width: 1600px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
 }
 
 .grid__row {
